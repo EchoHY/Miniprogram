@@ -1,17 +1,23 @@
 <view>
-  <image src="{{picture1}}" class="top-img" mode="aspectFill"></image>
-  <image src="{{picture2}}" class="top-img" mode="aspectFill"></image>
-  <view>{{name}}</view>
-  <view>{{information}}</view>
-  <view class="clearfix">
-    <view class="tag fl">租价:{{rentprice}}</view>
-    <view class="tag fl">售价:{{saleprice}}</view>
+  <image src="{{picture1}}" class="top-img" mode="aspectFit"></image>
+  <image src="{{picture2}}" class="top-img" mode="aspectFit"></image>
+  <view>图书名称:{{name}}</view>
+         <view class="line"></view>
+  <view>书后ISBN号:{{information}}</view>
+          <view class="line"></view>
+  <view class="price">
+    <view class="tag" hidden="{{rentpriceHidden}}">租价:{{rentprice}}元/天</view>
+    <view class="tag" hidden="{{salepriceHidden}}">售价:{{saleprice}}元</view>
+    
   </view>
+        
   <view class='container'>
-    <form bindsubmit='userCheck'>买
-    <switch name="way" checked="{{canIChange}}" disabled="{{disabled}}" bindchange="rorChange"></switch>租
-      <!-- <slider name="way" value="{{canIChange}}" step="1"max="1"show-value="false" min="0" disabled="{{disabled}}" bindchange='peroid_check'/>  -->
-      <text hidden="{{peroid_hidden}}">我要租多久</text><input type="number" name="peroid" hidden="{{peroid_hidden}}" value="0"/>
+    <form bindsubmit='userCheck'>
+    <view class="buyrent"><text style="font-weight:bold">买书</text>
+      <switch name="way" checked="{{canIChange}}" disabled="{{disabled}}" bindchange="rorChange"></switch><text style="font-weight:bold">租书</text>
+      </view>
+      <text hidden="{{peroid_hidden}}">租书时长</text>
+      <input type="number"  name="peroid" hidden="{{peroid_hidden}}" class="input"placeholder="单位/天"/>
       <button form-type='submit' type="primary">下单!</button>
     </form>
   </view>
@@ -28,7 +34,7 @@
           <picker name="grade" range='{{array}}' value="{{index}}" bindchange='bindchange'>
             <view>你的年级：{{array[index]}}</view>
           </picker>
-          <button form-type='submit' type="primary">提交</button>
+          <button form-type='submit' style="margin-left:auto" type="primary">提交</button>
         </form>
       </view>
     </view>

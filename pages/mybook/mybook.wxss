@@ -1,26 +1,70 @@
-.bar{
+.title{
+  font-weight: bold;
+  font-size: 1.5em;
   width:100%;
-  background-color: yellow;
-  height:30px;
-  text-align: center
+  text-align: center;
+  background: #FFF1CA;
+  height:100rpx;
+  padding-top:4%;
+  margin-bottom:4%;
+}
+.stuff{
+  border:2px rgb(120,120,120) solid;
+  margin-top:2.5%;
+  margin-bottom:4%;
+  padding:20rpx;
+}
+.wenzi{
+  line-height: 80rpx;
 }
 
+.xuming_button{
+  background: rgb(165,222,228);
+}
+.no{
+  background: #f67a72
+}
+.line{
+width:100%;
+height:3rpx;
+background:white;
+margin-bottom:20rpx;
+}
 /*叠加显示层 */
 .modal-box{
   position:fixed;
   width:100%;
   height:100%;
   top:0px;
-  background:rgba(0,0,0,0.4);
+  background:rgba(0,0,0,0.7);
   overflow: hidden;
   }
 
 .modal-body{
+ background:white;
   position:relative;
+  height:100%;
   }
 
 .modal-content{
   /* width: 60%; */
-  margin:0 10% 0 30%;
   overflow: hidden;
   border-radius: 10rpx;}
+  .input{
+  border:1px grey solid;
+  height:1.8em;
+  margin:auto;
+}
+.renew_title{
+  text-align:center;
+  font-weight: bold;
+  font-size:1.2em;
+}
+.renew_time{
+  margin-top:50px;
+   text-align:center;
+   font-weight: bold;
+}
+.input{
+  text-align: center;
+}

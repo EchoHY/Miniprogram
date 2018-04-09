@@ -14,10 +14,10 @@
   ],
   "window": {
     "backgroundTextStyle":"dark",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#e79460",
     "navigationBarTitleText": "书--遇见",
     "navigationBarTextStyle": "black",
-    "backgroundColor": "#f1f1f1",
+    "backgroundColor": "#e79460",
     "enablePullDownRefresh": false
   },
   "tabBar":{
