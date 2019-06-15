@@ -1,14 +1,27 @@
-<view class="container">
+<view class="bg">
+
   <view class="userinfo">
     <block>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    <open-data type="userAvatarUrl" class="userinfo-avatar"></open-data>
+
+<!-- <image  src="{{userInfo.avatarUrl}}"></image> -->
+    <open-data type="userNickName" class="userinfo-nickname"></open-data>
+
+      <!-- <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
     </block>
   </view>
-</view>
 
 <navigator url="../maishu/maishu" class="option">上传图书</navigator>
-<navigator url="../mybook/mybook" class="option">我手里的书</navigator>
-<navigator url="../needconfirm/needconfirm" class="option">待确认的交易</navigator>
-<navigator url="../needstop/needstop" class="option">待确认的停止分享</navigator>
-<navigator url="../myshare/myshare" class="option">我的分享</navigator>
+ <view bindtap="showList" class="option">在我手里的书</view>
+<navigator url="../needconfirm/needconfirm" class="option">待确认的购买
+<!-- <text style="color:grey">/租入</text> -->
+</navigator>
+ <!-- <view  class="option continue">暂未开放</view>
+ <view  class="option continue">暂未开放</view> -->
+<!-- <navigator url="../needstop/needstop" class="option">待确认的停止分享</navigator>
+<navigator url="../myshare/myshare" class="option">已经不在我手里的书</navigator> -->
+<view class="footer">@ECHO V2.2</view>
+<view class="ad" >
+  <ad  unit-id="adunit-71cf913800f6e4c3"></ad>
+</view>
+</view>

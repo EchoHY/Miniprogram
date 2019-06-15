@@ -1,7 +1,9 @@
 function Url(){
-  var url ="http://115.159.24.14/bookshare/"
-  //var url = "http://localhost:8082/BookShare/"
-  //var url = "http://192.168.3.140:8082/BookShare/"
+  //  var url ="https://39.106.146.211:8080/BookShare/"
+  // var url = "http://192.168.1.105:8080/BookShare/" //Sank
+  // var url = "http://192.168.1.102:8080/BookShare/"  //mercury
+   var url = "https://qrain.club/BookShare/"
+
   return  url;
 }
 module.exports = {

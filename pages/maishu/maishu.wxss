@@ -1,19 +1,34 @@
 /* pages/maishu/maishu.wxss */
-.modal-box{
-  position:fixed;
-  width:100%;
-  height:100%;
-  top:0px;
-  background:rgba(0,0,0,0.4);
-  overflow: hidden;
-  }
-
-.modal-body{
-  position:relative;
-  }
-
-.modal-content{
-  /* width: 60%; */
-  margin:0 10% 0 30%;
-  overflow: hidden;
-  border-radius: 10rpx;}
+.container{
+  display: flex;
+  flex-direction: column;
+  padding-top:1000rpm;
+  
+}
+.juzhong{
+margin:auto}
+.menu{
+text-align: center
+ }
+.input{
+  border:1px grey solid;
+  width:700rpx;
+  height:2em;
+  margin:auto;
+  margin-bottom:20rpx;
+  border-radius: 5%;
+  line-height: 100rpx;
+}
+.textbook_choose{
+  border:1px solid grey;
+  border-radius: 5%;
+  width:90%;
+  margin-left:5%;
+  margin-bottom: 10%;
+}
+.button_type{
+width:700rpx;
+margin-bottom:40rpx;
+border-radius: 5%;
+margin-top:20rpx;
+}

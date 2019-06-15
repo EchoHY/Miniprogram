@@ -1,4 +1,10 @@
 <!--pages/buysuccess/buysuccess.wxml-->
-<text>订单已提交</text>
-订单号码:123123123123
-此书当前持有人的联系方式:123123123123
+<view class="title">订单已提交</view>
+<view class="wenzi">此书持有人手机号码：</view>
+<view class="wenzi">{{phone}}<button bindtap="setClipBoard" size="mini">复制</button></view>
+<view class="wenzi">请主动联系！</view>
+<view class="wenzi">完成交易后请及时点击"确认购买"</view>
+
+ <form bindsubmit="backToIndex" report-submit="true">
+<button form-type='submit'>返回主页</button>
+  </form>

@@ -1,37 +1,153 @@
-.top-img{
-    width:100%;
-  
+.bookname {
+ font-size:1.3em;
+ font-weight:bold;
+ text-align: center;
+ margin-bottom: 70rpx;
 }
-.tag{
-    height:35rpx;
-    font-size:22rpx;
-    padding: 0 13rpx;
-    line-height: 35rpx;
-    color:#666;
-    border:1px solid #ccc;
-    border-radius:54px;
-    margin:10rpx 10rpx 0 10rpx;
-}
-.content{
-    color:#666;
-    margin:10rpx;
-    font-size:26rpx;
-}
-.modal-box{
-  position:fixed;
-  width:100%;
-  height:100%;
-  top:0px;
-  background:rgba(0,0,0,0.4);
-  overflow: hidden;
-  }
 
-.modal-body{
-  position:relative;
-  }
+.tag {
+  font-weight: bold;
+  color: rgb(255, 166, 0);
+  font-size: 1.1em;
+}
 
-.modal-content{
+.line {
+  width: 100%;
+  height: 2rpx;
+  background: #aaa;
+}
+
+.price {
+  margin-top: 20rpx;
+  text-align: center;
+}
+
+.container {
+  margin-top: 20px;
+
+}
+
+.buyrent {
+  height: 40px;
+  padding-top: 5%;
+  width: 170px;
+  margin: auto;
+}
+
+.input {
+  border: 1px grey solid;
+  height: 1.8em;
+  margin-left: 1%;
+  margin-bottom: 7%;
+}
+
+.modal-body {
+  position: relative;
+}
+
+.modal-content {
   /* width: 60%; */
-  margin:0 10% 0 30%;
+  margin: 0 10% 0 30%;
   overflow: hidden;
-  border-radius: 10rpx;}
+  border-radius: 10rpx;
+}
+
+.menu {
+  text-align: center;
+}
+
+
+
+
+/*模态弹窗  */
+/*mask*/ 
+.drawer_screen { 
+ width: 100%; 
+ height: 100%; 
+ position: fixed; 
+ top: 0; 
+ left: 0; 
+ z-index: 1000; 
+ background: #000; 
+ opacity: 0.5; 
+ overflow: hidden; 
+} 
+ 
+/*content*/ 
+.drawer_box { 
+ width: 650rpx; 
+ overflow: hidden; 
+ position: fixed; 
+ top: 50%; 
+ left: 0; 
+ z-index: 1001; 
+ background: #FAFAFA; 
+ margin: -150px 50rpx 0 50rpx; 
+ border-radius: 3px; 
+} 
+ 
+.drawer_title{ 
+ padding:15px; 
+ font: 20px "microsoft yahei"; 
+ text-align: center; 
+} 
+.drawer_content { 
+ height: 210px; 
+ overflow-y: scroll; /*超出父盒子高度可滚动*/ 
+} 
+ 
+.btn_ok{ 
+ padding: 10px; 
+ font: 20px "microsoft yahei"; 
+ text-align: center; 
+ border-top: 1px solid #E8E8EA; 
+ color: #3CC51F; 
+} 
+ 
+.top{ 
+ padding-top:8px; 
+} 
+.bottom { 
+ padding-bottom:8px; 
+} 
+.title { 
+ height: 30px; 
+ line-height: 30px; 
+ width: 160rpx; 
+ text-align: center; 
+ display: inline-block; 
+ font: 300 28rpx/30px "microsoft yahei"; 
+} 
+ 
+.input_base { 
+ border: 2rpx solid #ccc; 
+ padding-left: 10rpx; 
+ margin-right: 50rpx; 
+} 
+.input_h30{ 
+ height: 30px; 
+ line-height: 30px; 
+} 
+.input_h60{ 
+ height: 60px; 
+} 
+.input_view{ 
+ font: 12px "microsoft yahei"; 
+ background: #fff; 
+ color:#000; 
+ line-height: 30px; 
+} 
+ 
+input { 
+ font: 12px "microsoft yahei"; 
+ background: #fff; 
+ color:#000 ; 
+} 
+radio{ 
+ margin-right: 20px; 
+} 
+.grid { display: -webkit-box; display: box; } 
+.col-0 {-webkit-box-flex:0;box-flex:0;} 
+.col-1 {-webkit-box-flex:1;box-flex:1;} 
+.fl { float: left;} 
+.fr { float: right;} 

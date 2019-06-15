@@ -1,42 +1,41 @@
 //index.js
 //获取应用实例
-const app = getApp()
-function jump(link){
-  
-}
-Page({
-  data: {
-    userInfo: {},
-    hasUserInfo: false
-  },
-  //事件处理函数
-  // bindViewTap: function () {
-  //   wx.navigateTo({
-  //     url: '../detail/detail'
-  //   })
-  // },
-  onLoad: function () {
+var app = getApp()
 
+Page({
+  data:{
+    userInfo:null
+  },
+  onLoad:function(){
+    wx.showShareMenu()
+    wx.hideTabBarRedDot({
+      index:1
+    })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
-        hasUserInfo: true
       })
-    } else if (this.data.canIUse) {
+    } else  {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
         this.setData({
           userInfo: res.userInfo,
-          hasUserInfo: true
         })
       }
     }
   },
-  getUserInfo: function (e) {
-    console.log(e)
-    this.setData({
-      userInfo: e.detail.userInfo,
+  showList:function() {
+   
+    wx.showActionSheet({
+      // itemList: ['正在租用的书','租期已到的书','您发布的图书','购买的图书'],
+      itemList: ['发布的图书', '购买的图书','被预定的图书'],
+      success:function(res){
+        wx.navigateTo({
+          url: '../mybook/mybook?hidelist='+res.tapIndex,
+        })
+      }
     })
   }
+  
 })

@@ -1,26 +1,61 @@
-<view class="">
-  <input bindconfirm='search' class="serach-text" placeholder="搜索商品" />
-  <view>
-    <scroll-view  style="height:570px" scroll-y="true" bindscrolltolower="lower">
+<view class="bg">
+  <input class="search" bindfocus="showSearchLayer" bindconfirm='search' value="{{search_input_default}}" placeholder="搜索书籍/关键字" maxlength='30' comfirm-type="search" />
+  <view hidden="{{hideSearchDrawer}}">
+    <view class="drawer_screen_search" bindtap="hideSearchLayer" catchtouchmove="forbidMove"></view>
+    <view class="drawer_above_search">
+      <button  bindtap="showSelector">>>>试试教材助手</button>
+      
+    </view>
+  </view>
+  <view class="container">
+    <scroll-view style="height:980rpx" scroll-y="true" bindscrolltolower="lower">
       <block wx:for="{{postsList}}" wx:key="unique">
-        <view class="stuff">
-          <view index="{{index}}" data-suitid="{{item.id}}" catchtap="redictDetail">
-            <view class="wenzi">
-              <text>图书名称:{{item.title}}</text>
-              <text>图书ID:{{item.id}}</text>
-              <text>交易方式:{{way[item.way]}}</text>
-              <text>出租价格:{{item.rent_price}}</text>
-              <text>出售价格:{{item.sale_price}}</text>
-            </view>
-            <image class="img" src="{{item.picture}}" mode="scaleToFill"></image>
+        <view class="stuff" index="{{index}}" data-bookid="{{item.id}}" catchtap="redictDetail">
+          <view class="wenzi">
+            <text style="text-align:center">{{item.title}}</text>
+            <!-- <view class="line"></view> -->
+            <!-- <text>图书ID:{{item.id}}</text>   -->
+            <view class="line"></view>
+
+            <text>状态:{{way[item.way]}}</text>
+            <view class="line"></view>
+
+            <text class="price" hidden="{{(item.way===2)?true:false}}">出租价格:{{item.rent_price}}元/天</text>
+            <text class="price" hidden="{{(item.way===1)?true:false}}">出售价格:{{item.sale_price}}元</text>
           </view>
+          <image class="img" src="{{item.picture}}" mode="aspectFit"></image>
         </view>
       </block>
     </scroll-view>
-    <loading hidden="{{hidden}}">
-      加载中...
-    </loading>
-    <toast hidden="{{allStuff}}" duration="1000" bindchange="hiddenAllStuff">您已浏览全部商品</toast>
-    <toast hidden="{{hidden_warn}}" duration="1000" bindchange="hidden_warning">请输入搜索关键字</toast>
   </view>
+</view>
+
+
+
+<!--自定义的模态弹窗套件  -->
+
+<!--mask-->
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}" catchtouchmove="forbidMove"></view>
+<!--content-->
+<!--使用animation属性指定需要执行的动画-->
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+
+  <!--drawer content-->
+  <view class="drawer_title">{{welcomeTitle}}</view>
+  <view class="drawer_content">
+
+    <!-- <view class="top grid">
+      <label class="title col-0">标题</label>
+      <input class="input_base input_h30 col-1" name="rName" value="可自行定义内容"></input>
+    </view> -->
+    <view class="tip">
+      <text>{{welcomeText}}\n{{welcomeText2}}</text>
+    </view>
+
+  </view>
+  <form bindsubmit="getMessageAbility" report-submit="true">
+    <button class="btn_ok" form-type='submit'>我已知晓</button>
+
+  </form>
+  <!-- <button class="btn_ok" bindtap="powerClose" bindgetuserinfo="getUserInfo" open-type="getUserInfo">我已知晓</button> -->
 </view>
